@@ -63,7 +63,8 @@ if (len(sys.argv) >= 4):
 
 try:
     #print('Name: ' + name + ', type: ' + type + ', lifetime: ' + str(dns.lifetime) + ', resolver: ' + str(dns.nameservers))
-    answer = dns.query(name, type)
+    answer = dns.resolve(name, type)
+    #answer = dns.query(name, type)
 except Exception as e:
     print('ZBXDNSERROR100: Error performing query: ' + str(e.args), file=sys.stderr)
     exit(100)
